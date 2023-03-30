@@ -8,7 +8,7 @@ const listar = async function (req, res) {
     try {
         const themes = await ThemesService.listar(req.query.filtro || '');
         if (themes) {
-            // en users[0] se encuentra el listado de lo que se recupera desde el sql
+            // en users[0] se encuentra el listado de lo que se recupera desde el sqll
             res.json({
                 success: true,
                 temas: themes
