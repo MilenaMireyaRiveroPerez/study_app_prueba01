@@ -11,7 +11,7 @@ const listar = async function (req, res) {
         const users = await UserService.listar(req.query.filtro || "");
 
         if (users) {
-            // en users[0] se encuentra el listado de lo que se recupera desde el sql
+            // en users[0] se encuentra el listado de lo que se recupera desde el sql .
             res.json({
                 success: true,
                 usuarios: users
