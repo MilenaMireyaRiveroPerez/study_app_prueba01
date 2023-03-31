@@ -3,6 +3,7 @@ const { ThemesPropertiesModel } = require("../../model/themes_properties.model")
 const ThemesPropertiesService = require('../../service/themes_properties.service');
 
 ///cuando se trata de listar es mejor usar SQL puro por cuestion de tiempo
+////listar
 const listar = async function (req, res) {
     console.log("listar temas/propiedades");
     try {
@@ -28,6 +29,7 @@ const listar = async function (req, res) {
     }
 }; 
 
+///consultar por codigo 
 const consultarPorCodigo = async function (req, res) {
     console.log("consultar 1 tema/propiedad por codigo");
     try {
@@ -52,6 +54,7 @@ const consultarPorCodigo = async function (req, res) {
     }
 }; 
 
+//actualizar sirve para insertar y editar
 const actualizar = async function (req, res) {
     console.log("actualizar temas propiedades");
     let tema_propiedadRetorno = null; //guarda el tema que se va incluir o editar;
@@ -76,6 +79,7 @@ const actualizar = async function (req, res) {
     }
 }; 
 
+//eliminar registro fisicamente 
 const eliminar = async function (req, res) {
     console.log("eliminar temas propiedades");
    

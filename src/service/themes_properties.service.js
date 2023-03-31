@@ -2,6 +2,7 @@ const { sequelize } = require("../connection");
 const { ThemesPropertiesModel } = require("../model/themes_properties.model");
 
 ///cuando se trata de listar es mejor usar SQL puro por cuestion de tiempo
+//listar 
 const listar = async function (textoBuscar) {
     console.log("listar temas/propiedades");
     try {
