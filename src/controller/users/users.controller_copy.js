@@ -4,19 +4,15 @@ const UserService = require('../../service/users.service');
 
 const listar = async function (req, res) {
     ///async para que trabaje de manera asincrono 
-
     console.log("listar usuarios");
-
     try {
         const users = await UserService.listar(req.query.filtro || "");
-
         if (users) {
             // en users[0] se encuentra el listado de lo que se recupera desde el sql .
             res.json({
                 success: true,
                 usuarios: users
             });
-
         } else {
             res.json({
                 success: true,
@@ -33,11 +29,8 @@ const listar = async function (req, res) {
 };
 
 const consultarPorCodigo = async function (req, res) {
-
     console.log("consultar 1 usuario por codigo");
-
     try {
-
         const userModelResult = await UserService.busquedaPorCodigo(req.params.id);
         if (userModelResult) {
             res.json({
@@ -62,9 +55,6 @@ const consultarPorCodigo = async function (req, res) {
 const actualizar = async function (req, res) {
     console.log("actualizar usuarios");
     let usuarioRetorno = null; //guarda el usuario que se va incluir o editar;
-    //const data = req.body; //se obtiene los datos del cuerpo de la peticion
-    //const id = req.body.id;
-
     try {
         usuarioRetorno = await UserService.actualizar(
             req.body.id,
@@ -89,22 +79,19 @@ const actualizar = async function (req, res) {
 
 const eliminar = async function (req, res) {
     console.log("eliminar usuarios");
-  
     try {
         const usuarioRetorno = await UserService.eliminar(req.params.id);
         res.json({
             success: usuarioRetorno,
         });
-
     } catch (error) {
-         console.log(error);
+        console.log(error);
         res.json({
             success: false,
             error: error.message
         });
     }
 };
-
 
 module.exports = {
     listar, busquedaPorCodigo: consultarPorCodigo, actualizar, eliminar

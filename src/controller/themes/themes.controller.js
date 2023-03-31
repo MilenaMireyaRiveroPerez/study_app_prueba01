@@ -64,7 +64,6 @@ const actualizar = async function (req, res) {
             req.body.keywords,
             req.body.owner_user_id
         );
-
         res.json({
             success: true,
             themes: temaRetorno
@@ -80,13 +79,11 @@ const actualizar = async function (req, res) {
 
 const eliminar = async function (req, res) {
     console.log("eliminar temas");
-   
     try {
-        const temaRetorno =  await ThemesService.eliminar(req.params.id);
+        const temaRetorno = await ThemesService.eliminar(req.params.id);
         res.json({
             success: temaRetorno,
         });
-
     } catch (error) {
         console.log(error);
         res.json({

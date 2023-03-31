@@ -32,6 +32,7 @@ const TopicsModel = sequelize.define('Topics', {
     tableName: 'topics',
     timestamps: false
 });
+
 module.exports = {
     TopicsModel
 };  

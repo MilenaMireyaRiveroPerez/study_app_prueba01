@@ -10,7 +10,6 @@ const listar = async function (textoBuscar) {
          AND UPPER (name) LIKE UPPER ('%${textoBuscar}%')
          AND deleted IS false
          ORDER BY id`);
-
         if (users && users[0]) {
             return users[0];
         } else {
@@ -23,7 +22,6 @@ const listar = async function (textoBuscar) {
 };
 
 const consultarPorCodigo = async function (id) {
-
     console.log("consultar 1 usuario por codigo");
     try {
         const userModelResult = await UserModel.findByPk(id);
@@ -31,7 +29,7 @@ const consultarPorCodigo = async function (id) {
         if (userModelResult) {
             return userModelResult;
         } else {
-           return null;
+            return null;
         }
     } catch (error) {
         console.log(error);
@@ -43,7 +41,6 @@ const actualizar = async function (id, name, last_name, avatar, email, password,
     console.log("actualizar usuarios");
     let usuarioRetorno = null; //guarda el usuario que se va incluir o editar;
     const data = { id, name, last_name, avatar, email, password, deleted };
-
     try {
         let usrExiste = null;
         if (id) {
@@ -57,7 +54,6 @@ const actualizar = async function (id, name, last_name, avatar, email, password,
             usuarioRetorno = await UserModel.create(data);
         }
         return usuarioRetorno;
-
     } catch (error) {
         console.log(error);
         throw error;
@@ -66,9 +62,8 @@ const actualizar = async function (id, name, last_name, avatar, email, password,
 
 const eliminar = async function (id) {
     console.log("eliminar usuarios");
-
     try {
-        await UserModel.update({deleted: true },{where: {id: id}});
+        await UserModel.update({ deleted: true }, { where: { id: id } });
         return true;
     } catch (error) {
         console.log(error);

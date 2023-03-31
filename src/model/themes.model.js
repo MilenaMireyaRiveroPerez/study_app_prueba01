@@ -26,6 +26,7 @@ const ThemesModel = sequelize.define('Themes', {
     tableName: 'themes',
     timestamps: false
 });
+
 module.exports = {
     ThemesModel
 }; 
