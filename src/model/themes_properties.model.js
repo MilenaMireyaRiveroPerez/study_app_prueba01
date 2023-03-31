@@ -24,4 +24,3 @@ const ThemesPropertiesModel = sequelize.define('ThemesProperties', {
 module.exports = {
     ThemesPropertiesModel
 }; 
- 

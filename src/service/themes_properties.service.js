@@ -22,6 +22,7 @@ const listar = async function (textoBuscar) {
     }
 };
 
+//consultar por codigo
 const consultarPorCodigo = async function (id) {
     console.log("consultar 1 tema/propiedad por codigo");
     try {
@@ -37,6 +38,7 @@ const consultarPorCodigo = async function (id) {
     }
 };
 
+//actualizar sirve para insertar o editar un registro
 const actualizar = async function (
     id,
     theme_id,
@@ -67,6 +69,7 @@ const actualizar = async function (
     }
 }; 
 
+//eliminar un registro de manera fisica 
 const eliminar = async function (id) {
     console.log("eliminar temas propiedades");
     try {
